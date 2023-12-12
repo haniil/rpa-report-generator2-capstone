@@ -34,8 +34,8 @@ def save_df_to_file(df, file_folder, subject, file_memo, file_code,input_date, i
     def get_today(form='%Y%m%d'):
         return datetime.now().strftime(form)
     try:
-#         new_folder_path = os.path.join(file_folder, new_folder_name)
-#         os.makedirs(new_folder_path, exist_ok=True)
+        os.makedirs(file_folder, exist_ok=True)
+
         save_time = get_today()
         file_name = f'dataset-{subject}-{file_memo}-code{file_code}-date{input_date}-save{save_time}{file_extension}'
         file_path = os.path.join(file_folder, file_name)
